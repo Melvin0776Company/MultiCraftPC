@@ -114,7 +114,28 @@
 </footer>
 
         </main>
+        <script>
+            const win = document.getElementById("win");
+            const mac = document.getElementById("mac");
+            const linux = document.getElementById("linux");
 
-        H
+            fetch("https://api.github.com/repositories/320868050/releases/latest")
+                .then(res => res.json())
+                .then(data => {
+                    win.href = data.assets.find(x => x.name.includes(".exe")).browser_download_url;
+                    win.title = `Downloads: ${data.assets.find(x => x.name.includes(".exe")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".exe")).size / 1024 / 1024).toFixed(1)}MB`;
+
+                    mac.href = data.assets.find(x => x.name.includes(".dmg")).browser_download_url;
+                    mac.title = `Downloads: ${data.assets.find(x => x.name.includes(".dmg")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".dmg")).size / 1024 / 1024).toFixed(1)}MB`;
+                    
+                    linux.href = data.assets.find(x => x.name.includes(".AppImage")).browser_download_url;
+                    linux.title = `Downloads: ${data.assets.find(x => x.name.includes(".AppImage")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".AppImage")).size / 1024 / 1024).toFixed(1)}MB`;
+                })
+                .catch((e) => {
+                    win.href = "https://github.com/scratch-for-discord/scratch-for-discord-app/releases/download/v1.2.0/Scratch-For-Discord-Setup-1.2.0.exe";
+                    mac.href = "https://github.com/scratch-for-discord/scratch-for-discord-app/releases/download/v1.2.0/Scratch-For-Discord-1.2.0.dmg";
+                    linux.href = "https://github.com/scratch-for-discord/scratch-for-discord-app/releases/download/v1.2.0/Scratch-For-Discord-1.2.0.AppImage";
+                });
+        </script>
     </body>
 </html>
