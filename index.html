@@ -89,14 +89,22 @@
                 cursor: not-allowed !important;
                 opacity: 0.8;
             }
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+html, body {
+  height: 100%;
+  margin: 0;
 }
-footer{
-    margin-top: auto;
+.content {
+  min-height: 100%;
 }
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+.footer {
+  height: 50px;
+  margin-top: -50px;
+}
+
         </style>
     </head>
     <body>
@@ -117,9 +125,7 @@ footer{
                 <a href="https://multicraft.world"><button class="btn">Website</button></a>
                 <a href="https://github.com/MultiCraft"><button class="btn">GitHub</button></a>
             </div>
-     <footer>
-        This is Footer.
-    </footer>
+     <footer class="footer">TEST</footer>
         </main>
         <script>
             const win64 = document.getElementById("win64");
