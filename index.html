@@ -92,8 +92,26 @@
 .content {
   min-height: calc(100vh - 70px);
 }
-.footer {
-  height: 50px;
+  /**
+   * FOOTER
+   */
+
+  .footer .container { grid-template-columns: 1fr 0.8fr 0.8fr 1fr; }
+
+  .footer-list-title { margin-block-end: 30px; }
+
+  .footer-list > li:not(:last-child) { margin-block-end: 25px;}
+
+  .footer-bottom { padding-block: 30px; }
+
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright { margin-block-end: 0; }
+
 }
         </style>
     </head>
@@ -117,7 +135,24 @@
                 <a href="https://github.com/MultiCraft"><button class="btn">GitHub</button></a>
             </div>
 </div>
-     <footer class="footer">TEST</footer>
+     <footer class="footer">
+
+    
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="https://www.youtube.com/c/XREALM" class="copyright-link">XREALM</a>. Powered by <a href="http://go.melvin0776.com/v7FTTO"
+            class="copyright-link">Melvin0776#0001</a> 
+        </p>
+
+        
+
+      </div>
+    </div>
+
+  </footer>
         </main>
         <script>
             const win64 = document.getElementById("win64");
