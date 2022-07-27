@@ -118,22 +118,16 @@
             const win64 = document.getElementById("win64");
             const win32 = document.getElementById("win32");
 
-            fetch("https://api.github.com/repositories/320868050/releases/latest")
-                .then(res => res.json())
-                .then(data => {
-                    win.href = data.assets.find(x => x.name.includes(".exe")).browser_download_url;
-                    win.title = `Downloads: ${data.assets.find(x => x.name.includes(".exe")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".exe")).size / 1024 / 1024).toFixed(1)}MB`;
+            
+                    win64.href = data.assets.find(x => x.name.includes(".exe")).browser_download_url;
+                    win64.title = `Downloads: ${data.assets.find(x => x.name.includes(".exe")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".exe")).size / 1024 / 1024).toFixed(1)}MB`;
 
-                    mac.href = data.assets.find(x => x.name.includes(".dmg")).browser_download_url;
-                    mac.title = `Downloads: ${data.assets.find(x => x.name.includes(".dmg")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".dmg")).size / 1024 / 1024).toFixed(1)}MB`;
-                    
-                    linux.href = data.assets.find(x => x.name.includes(".AppImage")).browser_download_url;
-                    linux.title = `Downloads: ${data.assets.find(x => x.name.includes(".AppImage")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".AppImage")).size / 1024 / 1024).toFixed(1)}MB`;
+                    win32.href = data.assets.find(x => x.name.includes(".dmg")).browser_download_url;
+                    win32.title = `Downloads: ${data.assets.find(x => x.name.includes(".dmg")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".dmg")).size / 1024 / 1024).toFixed(1)}MB`;
                 })
                 .catch((e) => {
                     win64.href = "https://github.com/Melvin0776Corporation/MultiCraftPC/releases/download/2.0.1/multicraft-2.0.1-win64.zip";
                     win32.href = "https://github.com/Melvin0776Corporation/MultiCraftPC/releases/download/2.0.1/multicraft-2.0.1-win32.zip";
-                    linux.href = "https://github.com/scratch-for-discord/scratch-for-discord-app/releases/download/v1.2.0/Scratch-For-Discord-1.2.0.AppImage";
                 });
         </script>
     </body>
