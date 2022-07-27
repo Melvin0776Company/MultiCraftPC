@@ -118,7 +118,9 @@
             const win64 = document.getElementById("win64");
             const win32 = document.getElementById("win32");
 
-            
+            fetch("https://api.github.com/repositories/320868050/releases/latest")
+                .then(res => res.json())
+                .then(data => {
                     win64.href = data.assets.find(x => x.name.includes(".exe")).browser_download_url;
                     win64.title = `Downloads: ${data.assets.find(x => x.name.includes(".exe")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".exe")).size / 1024 / 1024).toFixed(1)}MB`;
 
