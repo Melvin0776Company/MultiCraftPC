@@ -124,7 +124,6 @@
                     win64.href = data.assets.find(x => x.name.includes(".zip")).browser_download_url;
                     win64.title = `Downloads: ${data.assets.find(x => x.name.includes(".zip")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".zip")).size / 1024 / 1024).toFixed(1)}MB`;
 
-                    win32.href = data.assets.find(x => x.name.includes(".zip")).browser_download_url;
                     win32.title = `Downloads: ${data.assets.find(x => x.name.includes(".zip")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".zip")).size / 1024 / 1024).toFixed(1)}MB`;
                 })
                 .catch((e) => {
