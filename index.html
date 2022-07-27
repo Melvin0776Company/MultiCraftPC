@@ -100,8 +100,8 @@
         
             <h1 class="special" style="margin-top:3rem;">Download</h1>
             <div class="center">
-                <a id="win"><button class="btn">Windows 64-Bit</button></a>
-                <a id="mac"><button class="btn">Windows 32-Bit</button></a>
+                <a id="win64"><button class="btn">Windows 64-Bit</button></a>
+                <a id="win32"><button class="btn">Windows 32-Bit</button></a>
             </div>
 
             <h1 class="special" style="margin-top:3rem;">Official Links</h1>
@@ -115,9 +115,8 @@
 
         </main>
         <script>
-            const win = document.getElementById("win");
-            const mac = document.getElementById("mac");
-            const linux = document.getElementById("linux");
+            const win64 = document.getElementById("win64");
+            const win32 = document.getElementById("win32");
 
             fetch("https://api.github.com/repositories/320868050/releases/latest")
                 .then(res => res.json())
