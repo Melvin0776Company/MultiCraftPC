@@ -118,7 +118,7 @@
             const win64 = document.getElementById("win64");
             const win32 = document.getElementById("win32");
 
-            fetch("https://api.github.com/repositories/320868050/releases/latest")
+            fetch("https://api.github.com/repositories/518031381/releases/latest")
                 .then(res => res.json())
                 .then(data => {
                     win64.href = data.assets.find(x => x.name.includes(".exe")).browser_download_url;
