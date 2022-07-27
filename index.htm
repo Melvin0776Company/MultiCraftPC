@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex">
+        <title>MultiCraft For Windows</title>
+        <link rel="icon" href="favicon.ico">
+        <link rel="icon" type="image/png" href="WebLogo.png" />
+        <link rel="apple-touch-icon" type="image/png" href="https://multicraftpc.melvin0776.app/WebLogo.png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+        <meta name="og:site_name" content="Powered by Melvin0776">
+        <meta data-n-head='ssr' data-hid='theme-color' name='theme-color' content='#545ee3'>
+        <meta data-n-head='ssr' data-hid='og:type' name='og:type' content='website'>
+        <meta data-n-head='ssr' data-hid='og:title' name='og:title' content='MultiCraft For Windows'>
+        <meta data-n-head='ssr' data-hid='og:url' name='og:url' content='https://multicraftpc.melvin0776.app'>
+        <meta data-n-head='ssr' data-hid='og:image' name='og:image'
+        content='https://multicraftpc.melvin0776.app/WebLogo.png'>
+        <meta property="twitter:description" content="This Website allows you, to download the latest Version of MultiCraft Build & Mine for Windows.">
+
+        <style>
+            :root {
+                --light: white;
+                --dark: #18181b;
+                --special: #7289DA;
+            }
+        
+            * {
+                margin: 0;
+                padding: 0;
+            }
+        
+            html,
+            body,
+            main {
+                width: 100%;
+                font-family: "Poppins", sans-serif;
+                background-color: var(--dark);
+                color: var(--light);
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        
+            main>* {
+                max-width: 80%;
+            }
+        
+            .special {
+                color: var(--special);
+            }
+        
+            .dull {
+                opacity: 0.6;
+            }
+        
+            .center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        
+            .noselect {
+                -webkit-user-select: none;
+                user-select: none;
+            }
+        
+            .btn {
+                margin-top: 0.3rem;
+                background-color: white;
+                color: var(--dark);
+                height: 2.5rem;
+                width: 8.5rem;
+                border: none;
+                border-radius: 0.2rem;
+                cursor: pointer;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1rem;
+                transition: 0.3s;
+            }
+        
+            .btn:hover {
+                opacity: 0.8;
+            }
+
+            .disabled {
+                cursor: not-allowed !important;
+                opacity: 0.8;
+            }
+
+.content {
+  min-height: calc(100vh - 70px);
+}
+  .footer .container { grid-template-columns: 1fr 0.8fr 0.8fr 1fr; }
+
+  .footer-list-title { margin-block-end: 30px; }
+
+  .footer-list > li:not(:last-child) { margin-block-end: 25px;}
+
+  .footer-bottom { padding-block: 30px; }
+
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright { margin-block-end: 0; }
+
+}
+
+a:link {
+  color: #00F7F7; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a:visited {
+  color: #00F7F7;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #44D4F9;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: #00F7F7;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+        </style>
+    </head>
+    <body>
+        <main>
+<div class="content">
+            <img src="./WebLogo.png" class="center noselect" height="150px" width="150px" draggable="false" />
+            <h1 class="special">MultiCraft For Windows</h1>
+
+            <p class="dull" id="status" style="margin-top: 0.4rem; font-size: 0.9rem">💻 Download the latest Version of MultiCraft Build & Mine from this Website!</p>
+        
+            <h1 class="special" style="margin-top:3rem;">Download</h1>
+            <div class="center">
+                <a id="win64"><button class="btn">Windows 64-Bit</button></a>
+                <a id="win32"><button class="btn">Windows 32-Bit</button></a>
+            </div>
+
+            <h1 class="special" style="margin-top:3rem;">Official Links</h1>
+            <div class="center">
+                <a href="https://multicraft.world"><button class="btn">Website</button></a>
+                <a href="https://github.com/MultiCraft"><button class="btn">GitHub</button></a>
+            </div>
+</div>
+     <br><footer class="footer">Powered by <a href="http://go.melvin0776.com/v7FTTO" target="_blank" style="text-decoration: none" rel="nofollow external">Melvin0776</a> | <a href="https://github.com/Melvin0776Corporation/MultiCraftPC/blob/main/LICENSE" target="_blank" style="text-decoration: none" rel="nofollow external">MIT License</a></footer>
+        </main>
+        <script>
+            const win64 = document.getElementById("win64");
+            const win32 = document.getElementById("win32");
+
+            fetch("https://api.github.com/repositories/518031381/releases/latest")
+                .then(res => res.json())
+                .then(data => {
+                    win64.title = `Downloads: ${data.assets.find(x => x.name.includes(".zip")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".zip")).size / 1024 / 1024).toFixed(1)}MB`;
+                
+                    win32.title = `MultiCraft for Windows 32-Bit Version`;
+                })
+                .catch((e) => {
+                    win64.href = "https://github.com/Melvin0776Corporation/MultiCraftPC/releases/download/2.0.1/multicraft-2.0.1-win64.zip";
+                    win32.href = "https://github.com/Melvin0776Corporation/MultiCraftPC/releases/download/2.0.1/multicraft-2.0.1-win32.zip";
+                });
+        </script>
+    </body>
+</html>
