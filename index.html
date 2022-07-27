@@ -147,8 +147,8 @@ a:active {
         
             <h1 class="special" style="margin-top:3rem;">Download</h1>
             <div class="center">
-                <a id="win64"><button class="btn">Windows 64-Bit</button></a>
-                <a id="win32"><button class="btn">Windows 32-Bit</button></a>
+                <a href="https://github.com/Melvin0776Corporation/MultiCraftPC/releases/download/2.0.1/multicraft-2.0.1-win64.zip" id="win64"><button class="btn">Windows 64-Bit</button></a>
+                <a href="https://github.com/Melvin0776Corporation/MultiCraftPC/releases/download/2.0.1/multicraft-2.0.1-win32.zip" id="win32"><button class="btn">Windows 32-Bit</button></a>
             </div>
 
             <h1 class="special" style="margin-top:3rem;">Official Links</h1>
@@ -166,7 +166,7 @@ a:active {
             fetch("https://api.github.com/repositories/518031381/releases/latest")
                 .then(res => res.json())
                 .then(data => {
-                    win64.title = `Downloads: ${data.assets.find(x => x.name.includes(".zip")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".zip")).size / 1024 / 1024).toFixed(1)}MB`;
+                    win64.title = `MultiCraft for Windows 64-Bit Version`;
                 
                     win32.title = `MultiCraft for Windows 32-Bit Version`;
                 })
