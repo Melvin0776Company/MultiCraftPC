@@ -121,11 +121,11 @@
             fetch("https://api.github.com/repositories/518031381/releases/latest")
                 .then(res => res.json())
                 .then(data => {
-                    win64.href = data.assets.find(x => x.name.includes(".exe")).browser_download_url;
-                    win64.title = `Downloads: ${data.assets.find(x => x.name.includes(".exe")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".exe")).size / 1024 / 1024).toFixed(1)}MB`;
+                    win64.href = data.assets.find(x => x.name.includes(".zip")).browser_download_url;
+                    win64.title = `Downloads: ${data.assets.find(x => x.name.includes(".zip")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".zip")).size / 1024 / 1024).toFixed(1)}MB`;
 
-                    win32.href = data.assets.find(x => x.name.includes(".dmg")).browser_download_url;
-                    win32.title = `Downloads: ${data.assets.find(x => x.name.includes(".dmg")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".dmg")).size / 1024 / 1024).toFixed(1)}MB`;
+                    win32.href = data.assets.find(x => x.name.includes(".zip")).browser_download_url;
+                    win32.title = `Downloads: ${data.assets.find(x => x.name.includes(".zip")).download_count} | Size: ${(data.assets.find(x => x.name.includes(".zip")).size / 1024 / 1024).toFixed(1)}MB`;
                 })
                 .catch((e) => {
                     win64.href = "https://github.com/Melvin0776Corporation/MultiCraftPC/releases/download/2.0.1/multicraft-2.0.1-win64.zip";
